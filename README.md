@@ -7,5 +7,5 @@ Bored of needing to sign into Reddit just to view it for approximately < 30secon
 Made it so I can switch threads easily get some juice for the day :D 
 
 **Utilised**
-* [ChakraUI]
-* [TailWind]
+* ChakraUI
+* TailWind
