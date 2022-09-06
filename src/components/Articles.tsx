@@ -18,24 +18,21 @@ import {
 import Comments from "./Comments";
 
 interface Article {
-    data:{
-        id:string,
-        title: string,
-        domain: string,
-        url: string,
-        num_comments: string,
-        media: {
-            reddit_video: {
-                fallback_url: string,
-            },
-
-        },
-
-    }
+  data: {
+    id: string;
+    title: string;
+    domain: string;
+    url: string;
+    num_comments: string;
+    media: {
+      reddit_video: {
+        fallback_url: string;
+      };
+    };
+  };
 }
 
 const Articles = () => {
-
   const [articles, setArticles] = useState<Article[]>([]);
   const [userInput, setUserInput] = useState<string>("");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -50,7 +47,7 @@ const Articles = () => {
   };
   const url: string = `https://www.reddit.com/r/${userInput}/hot.json?&limit=15`;
   const defaultUrl: string = `https://www.reddit.com/r/dota2/hot.json?&limit=15`; // default page
-//   const commentUrl: string = `https://www.reddit.com/r/DotA2/comments/${article.data.id}.json?&limit=9`;
+  //   const commentUrl: string = `https://www.reddit.com/r/DotA2/comments/${article.data.id}.json?&limit=9`;
 
   const concatReddit: string = "www.reddit.com";
 
@@ -121,8 +118,10 @@ const Articles = () => {
                 ""
               )}
 
-              <p className="text-gray-500 text-lg">Comments : {article.data.num_comments}</p>
-                <p>{}</p>
+              <p className="text-gray-500 text-lg">
+                Comments : {article.data.num_comments}
+              </p>
+              <p>{}</p>
               <Comments props={article.data.id} />
             </div>
           );

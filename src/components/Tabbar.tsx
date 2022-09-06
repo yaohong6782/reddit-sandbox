@@ -9,9 +9,9 @@ const Tabbar = () => {
     <Tabs>
       <TabList>
         <Tab>Browse others</Tab>
-        <Tab px={10}>One</Tab>
-        <Tab px={10}>Two</Tab>
-        <Tab px={10}>Three</Tab>
+        <Tab px={10}>New</Tab>
+        <Tab px={10}>Rising</Tab>
+        <Tab px={10}>Controversial</Tab>
       </TabList>
 
       <TabPanels>
