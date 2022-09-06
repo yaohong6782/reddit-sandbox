@@ -16,21 +16,8 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Comments from "./Comments";
+import { Article } from "./Interface/Interface";
 
-interface Article {
-  data: {
-    id: string;
-    title: string;
-    domain: string;
-    url: string;
-    num_comments: string;
-    media: {
-      reddit_video: {
-        fallback_url: string;
-      };
-    };
-  };
-}
 
 const Articles = () => {
   const [articles, setArticles] = useState<Article[]>([]);

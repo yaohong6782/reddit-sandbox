@@ -16,13 +16,14 @@ import {
   ModalFooter,
   useDisclosure,
 } from "@chakra-ui/react";
+import { CurrentThread } from "./Interface/Interface";
 
-const Comments = (currentThread: any) => {
+const Comments = (currentThread: CurrentThread) => {
   const finalRef = React.useRef(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [comments, setComments] = useState<string[]>([]);
-  
+
   let url: string = `https://www.reddit.com/r/DotA2/comments/${currentThread["props"]}.json?&limit=5`;
 
   useEffect(() => {}, []);
@@ -37,7 +38,7 @@ const Comments = (currentThread: any) => {
       .then((data) => console.log(data));
   };
 
-  console.log(currentThread["props"]);
+//   console.log(currentThread["props"]);
 
   return (
     <div>
@@ -55,7 +56,7 @@ const Comments = (currentThread: any) => {
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            
+            Get comments from this API end point : {currentThread["props"]}
           </ModalBody>
 
           <ModalFooter>
