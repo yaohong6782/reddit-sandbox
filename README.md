@@ -2,5 +2,9 @@
 Diving into typescript with some design UIs
 
 # Why?
-Bored of signing into Reddit just to view it for approximately < 30seconds\
-I like fullstack
+Bored of needing to sign into Reddit just to view it for approximately < 30seconds\
+Made it so I can switch threads easily get some juice for the day :D 
+
+**Utilised**
+* [ChakraUI]
+* [TailWind]
