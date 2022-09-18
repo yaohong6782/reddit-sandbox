@@ -3,16 +3,8 @@ import {
   Image,
   Input,
   FormControl,
-  FormLabel,
   Button,
   AspectRatio,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
   useDisclosure,
 } from "@chakra-ui/react";
 import Comments from "./Comments";
@@ -108,8 +100,7 @@ const Articles = () => {
               <p className="text-gray-500 text-lg">
                 Comments : {article.data.num_comments}
               </p>
-              <p>{}</p>
-              <Comments props={article.data.id} />
+              <Comments props={article.data.id} threadId={""} />
             </div>
           );
         })}

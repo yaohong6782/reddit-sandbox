@@ -16,33 +16,35 @@ import {
   ModalFooter,
   useDisclosure,
 } from "@chakra-ui/react";
-import { CurrentThread } from "./Interface/Interface";
+import { ArticleComments, CurrentThread } from "./Interface/Interface";
+import ShowComment from "./Others/ShowComment";
 
 const Comments = (currentThread: CurrentThread) => {
+
   const finalRef = React.useRef(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [comments, setComments] = useState<string[]>([]);
+  const [comments, setComments] = useState<ArticleComments[]>([]);
 
   let url: string = `https://www.reddit.com/r/DotA2/comments/${currentThread["props"]}.json?&limit=5`;
 
-  useEffect(() => {}, []);
+//   useEffect(() => {
+//     // console.log(currentThread["props"]);
+//     const fetchComments = async (threadId: string) => {
+//         await fetch(url, {
+//           headers: {
+//             Accept: "application/json",
+//           },
+//         })
+//           .then((res) => res.json)
+//           .then((data) => console.log(data));
+//       };
+//   }, []);
 
-  const fetchComments = async () => {
-    await fetch(url, {
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((res) => res.json)
-      .then((data) => console.log(data));
-  };
 
-//   console.log(currentThread["props"]);
 
   return (
     <div>
-      
       <Button mt={4} onClick={onOpen}>
         Peek
       </Button>
@@ -56,7 +58,9 @@ const Comments = (currentThread: CurrentThread) => {
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            Get comments from this API end point : {currentThread["props"]}
+            {/* Get comments from this API end point : {currentThread["props"]} */}
+            <ShowComment threadId={currentThread["props"]} />
+            
           </ModalBody>
 
           <ModalFooter>
